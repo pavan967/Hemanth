@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Foodie</title>
+    <link rel="stylesheet" href="contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header/Logo -->
+    <div class="header-logo">
+        <img src="logo.jpeg" alt="Foodie Logo" class="logo-image">
+        <h2>Foodie</h2>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <!-- <li><a href="index.html">Home</a></li> -->
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="order.html">Order Now</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+            <!-- <li><a href="login.html">Login</a></li> -->
+        </ul>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <h1>Contact Us</h1>
+        <p>We would love to hear from you! Reach out to us with any questions or feedback.</p>
+        
+        <!-- Contact Form -->
+        <form class="contact-form" action="submit_contact.php" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+
+        <!-- Map Placeholder -->
+        <div class="map">
+            <h2>Our Location</h2>
+            <p>123 Foodie Lane, Culinary City, FC 12345</p>
+            <img src="map-placeholder.jpg" alt="Map showing location" class="map-image">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Foodie | Designed with ♥</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Foodie</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="profile-container">
+        <h1>User Profile</h1>
+        <div class="user-details">
+            <p><strong>Name:</strong> <span id="user-name">Guest</span></p>
+            <p><strong>Email:</strong> <span id="user-email">Not provided</span></p>
+            <p><a href="menu.html">Back to Menu</a></p>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <script>
+        // Retrieve and display the name and email from localStorage
+        const name = localStorage.getItem('userName');
+        const email = localStorage.getItem('userEmail');
+
+        if (name) document.getElementById('user-name').textContent = name;
+        if (email) document.getElementById('user-email').textContent = email;
+
+        // Logout function to clear storage and redirect to login page
+        function logout() {
+            localStorage.clear();
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

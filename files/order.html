@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Now - Foodie</title>
+    <link rel="stylesheet" href="order.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h2>Foodie</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="order.html" class="active">Order Now</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Order Form Section -->
+    <section class="order">
+        <h1>Place Your Order</h1>
+        <form id="order-form" action="payment.html" method="post">
+            
+            <!-- Container for multiple dishes -->
+            <div id="dishes-container">
+                <div class="dish-group">
+                    <label for="dish">Select a Dish:</label>
+                    <select name="dish[]" required>
+                        <option value="" disabled selected>Choose a dish...</option>
+                        <option value="spring-rolls" data-price="6.99">Spring Rolls </option>
+                        <option value="garlic-bread" data-price="3.99">Garlic Bread </option>
+                        <option value="spicy-chicken" data-price="10.99">Spicy Chicken</option>
+                        <option value="spicy-chicken" data-price="10.99">Spicy Chicken</option>
+                        <option value="spicy-chicken" data-price="10.99">Spicy Chicken</option>
+                        <option value="spicy-chicken" data-price="10.99">Spicy Chicken</option>
+                        <option value="spicy-chicken" data-price="10.99">Spicy Chicken</option>
+                        <option value="spicy-chicken" data-price="10.99">Spicy Chicken</option>
+                        <option value="spicy-chicken" data-price="10.99">Spicy Chicken</option>
+                        <option value="spicy-chicken" data-price="10.99">Spicy Chicken</option>
+                        <option value="spicy-chicken" data-price="10.99">Spicy Chicken</option>
+                        <option value="spicy-chicken" data-price="10.99">Spicy Chicken</option>
+                    </select>
+
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" name="quantity[]" min="1" max="10" value="1" required>
+
+                    <label>Total:</label>
+                    <input type="text" class="dish-total" readonly placeholder="$0.00">
+                </div>
+            </div>
+
+            <!-- Button to add more dishes -->
+            <button type="button" onclick="addDish()">Add Another Dish</button>
+
+            <!-- Overall Total -->
+            <label for="overall-total">Overall Total:</label>
+            <input type="text" id="overall-total" name="overall-total" readonly placeholder="$0.00">
+
+            <!-- Submit Button -->
+            <input type="submit" value="Proceed to Payment" class="btn submit-btn">
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Foodie | Designed with ♥</p>
+    </footer>
+
+    <!-- JavaScript for handling dynamic dish selection and total calculation -->
+    <script>
+        // Function to calculate total for each dish and overall total
+        function calculateDishTotal() {
+            const dishGroups = document.querySelectorAll('.dish-group');
+            let overallTotal = 0;
+    
+            dishGroups.forEach(group => {
+                const dishSelect = group.querySelector('select');
+                const quantityInput = group.querySelector('input[name="quantity[]"]');
+                const dishTotal = group.querySelector('.dish-total');
+    
+                const price = parseFloat(dishSelect.options[dishSelect.selectedIndex]?.dataset.price || 0);
+                const quantity = parseInt(quantityInput.value || 1);
+                const total = price * quantity;
+    
+                dishTotal.value = `$${total.toFixed(2)}`;
+                overallTotal += total;
+            });
+    
+            document.getElementById('overall-total').value = `$${overallTotal.toFixed(2)}`;
+        }
+    
+        // Function to add a new dish selection field
+        function addDish() {
+            const container = document.getElementById('dishes-container');
+            const newDishGroup = container.firstElementChild.cloneNode(true);
+    
+            // Reset values in the new dish group
+            newDishGroup.querySelector('select').selectedIndex = 0;
+            newDishGroup.querySelector('input[name="quantity[]"]').value = 1;
+            newDishGroup.querySelector('.dish-total').value = "$0.00";
+    
+            container.appendChild(newDishGroup);
+    
+            // Recalculate totals when new dish group is added
+            newDishGroup.querySelector('select').addEventListener('change', calculateDishTotal);
+            newDishGroup.querySelector('input[name="quantity[]"]').addEventListener('input', calculateDishTotal);
+        }
+    
+        // Add initial event listeners for dish and quantity changes
+        document.getElementById('order-form').addEventListener('change', calculateDishTotal);
+        document.getElementById('order-form').addEventListener('input', calculateDishTotal);
+    
+        // Handle form submission and store order details in localStorage
+        document.getElementById('order-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents immediate form submission
+    
+            // Capture all selected dishes and quantities
+            const orderSummary = [];
+            const dishGroups = document.querySelectorAll('.dish-group');
+    
+            dishGroups.forEach(group => {
+                const dishSelect = group.querySelector('select');
+                const quantityInput = group.querySelector('input[name="quantity[]"]');
+                
+                const dishName = dishSelect.options[dishSelect.selectedIndex].text;
+                const quantity = quantityInput.value;
+    
+                orderSummary.push({ dish: dishName, quantity: quantity });
+            });
+    
+            // Store the full order summary in local storage
+            localStorage.setItem('orderSummary', JSON.stringify(orderSummary));
+    
+            // Redirect to payment page
+            window.location.href = 'payment.html';
+        });
+    </script>
+    
+</body>
+</html>

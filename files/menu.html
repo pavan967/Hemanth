@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Foodie</title>
+    <link rel="stylesheet" href="menu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="logo">
+        <h2>Foodie</h2>
+    </div>
+
+    <!-- User Profile Section -->
+    <div class="user-profile">
+        <img src="profile.jpeg" alt="User Profile Picture" class="profile-pic">
+        <div class="user-info">
+            <p>Welcome, <span id="username"></span></p>
+            <p><a href="profile.html">View Profile</a></p>
+        </div>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="order.html">Order Now</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+    <!-- Menu Section -->
+    <section class="menu">
+        <h1>Our Menu</h1>
+
+        <!-- Filter Buttons -->
+        <div class="filter-btns">
+            <button class="btn filter-btn" data-category="appetizers">Appetizers</button>
+            <button class="btn filter-btn" data-category="main">Main Courses</button>
+            <button class="btn filter-btn" data-category="beverages">Beverages</button>
+            <button class="btn filter-btn" data-category="desserts">Desserts</button>
+            <button class="btn filter-btn" data-category="salads">Salads</button>
+            <button class="btn filter-btn" data-category="kids">Kids’ Menu</button>
+        </div>
+
+        <!-- Menu Items -->
+        <div class="menu-items">
+            <!-- Appetizers -->
+            <div class="menu-item" data-category="appetizers">
+                <img src="spring.jpeg" alt="Spring Rolls">
+                <h3>Spring Rolls</h3>
+                <p>Crispy rolls with fresh veggies and a hint of spice.</p>
+                <p>$6.99</p>
+            </div>
+            <div class="menu-item" data-category="appetizers">
+                <img src="garlic.jpeg" alt="Garlic Bread">
+                <h3>Garlic Bread</h3>
+                <p>Toasted with garlic butter and herbs.</p>
+                <p>$3.99</p>
+            </div>
+
+            <!-- Main Courses -->
+            <div class="menu-item" data-category="main">
+                <img src="grilledchicken.jpeg" alt="Grilled Chicken">
+                <h3>Grilled Chicken</h3>
+                <p>Juicy chicken served with steamed veggies.</p>
+                <p>$12.99</p>
+            </div>
+            <div class="menu-item" data-category="main">
+                <img src="vegan.jpeg" alt="Vegan Bowl">
+                <h3>Vegan Bowl</h3>
+                <p>Quinoa, roasted vegetables, and tahini dressing.</p>
+                <p>$10.99</p>
+            </div>
+
+            <!-- Beverages -->
+            <div class="menu-item" data-category="beverages">
+                <img src="mangosmmothie.jpeg" alt="Mango Smoothie">
+                <h3>Mango Smoothie</h3>
+                <p>Fresh mango blended with yogurt and ice.</p>
+                <p>$4.99</p>
+            </div>
+            <div class="menu-item" data-category="beverages">
+                <img src="coffee.jpeg" alt="Iced Coffee">
+                <h3>Iced Coffee</h3>
+                <p>Refreshing cold coffee with a shot of espresso.</p>
+                <p>$3.99</p>
+            </div>
+
+            <!-- Desserts -->
+            <div class="menu-item" data-category="desserts">
+                <img src="cake.jpeg" alt="Chocolate Cake">
+                <h3>Chocolate Cake</h3>
+                <p>Rich chocolate cake topped with ganache.</p>
+                <p>$5.99</p>
+            </div>
+            <div class="menu-item" data-category="desserts">
+                <img src="fruitparfait.jpeg" alt="Fruit Parfait">
+                <h3>Fruit Parfait</h3>
+                <p>Layered yogurt, granola, and fresh berries.</p>
+                <p>$4.99</p>
+            </div>
+
+            <!-- Salads -->
+            <div class="menu-item" data-category="salads">
+                <img src="salad.jpeg" alt="Caesar Salad">
+                <h3>Caesar Salad</h3>
+                <p>Crisp romaine lettuce, croutons, and Caesar dressing.</p>
+                <p>$7.99</p>
+            </div>
+            <div class="menu-item" data-category="salads">
+                <img src="greeksalad.jpeg" alt="Greek Salad">
+                <h3>Greek Salad</h3>
+                <p>Feta, olives, cucumber, and cherry tomatoes.</p>
+                <p>$7.99</p>
+            </div>
+
+            <!-- Kids’ Menu -->
+            <div class="menu-item" data-category="kids">
+                <img src="pizza.jpeg" alt="Mini Pizza">
+                <h3>Mini Pizza</h3>
+                <p>Perfectly sized for kids, with cheese and pepperoni.</p>
+                <p>$6.99</p>
+            </div>
+            <div class="menu-item" data-category="kids">
+                <img src="nuggets.jpeg" alt="Chicken Nuggets">
+                <h3>Chicken Nuggets</h3>
+                <p>Crispy chicken bites with a side of fries.</p>
+                <p>$5.99</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Foodie | Designed with ♥</p>
+    </footer>
+
+    <script src="menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Logo Section */
+.header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+}
+
+.header-logo img.logo-image {
+    height: 50px;
+    margin-right: 10px;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #444;
+    padding: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #fff; /* White text for better visibility */
+    text-decoration: none;
+    font-weight: 400;
+    padding: 10px;
+    transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+/* Hover effect for navigation links */
+.nav-links a:hover {
+    color: #ff6347; /* Hover color */
+    font-weight: 600; /* Bold on hover */
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('background1.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    min-height: 70vh;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* About Us Section */
+.about-container {
+    max-width: 600px;
+    margin: 0 auto 50px;
+    padding: 20px;
+    color: #fff;
+}
+
+.about-container p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Mission and Vision Section */
+.mission-vision-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    background-color: transparent;
+}
+
+.container {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+}
+
+.container h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.container p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Services Section */
+.services {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+    color: #333;
+}
+
+.services h2 {
+    font-size: 2rem;
+    color: #f9a825;
+    margin-bottom: 30px;
+}
+
+.service-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.service-item {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.service-logo {
+    width: 60px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    font-size: 1rem;
+    color: #666;
+    margin: 10px 0;
+}
+
+/* Add styles for the images */
+.vision-image, .mission-image {
+    width: 25%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
